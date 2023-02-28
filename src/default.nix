@@ -31,5 +31,6 @@ pkgs.mkShell {
     RPackages
     pkgs.gnuplot
     inkscape
+    pkgs.julia
   ];
 }
