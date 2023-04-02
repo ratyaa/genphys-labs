@@ -1,0 +1,48 @@
+\documentclass[a4paper, 12pt]{article}
+
+\def \srcdir{tex/}
+\def \picdir{pic/}
+
+\input{\srcdir properties}
+\input{\srcdir macros}
+
+\title{
+  Лабораторная работа \textnumero \input{\srcdir index}\\
+  \textbf{\textquote{\input{\srcdir name}\unskip}}
+}
+\author{\input{\srcdir author}}
+\date{\input{\srcdir date}}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\subsection*{Цель работы}
+\lipsum[1-1]
+
+\subsection*{Оборудование}
+\begin{itemize}[noitemsep]
+  \item Пиво светлое
+  \item Пиво темное
+  \item Пиво \textquote{Невское}
+  \item Сосед Игорь
+  \item Гигрометр Валера
+\end{itemize}
+
+\subsection*{{Ход работы}}
+
+\subsubsection*{\Rnum{1}. Пиво светлое}
+\lipsum[2-2]
+\svg[0.7]{linsin}{Sample Text}
+
+\subsubsection*{\Rnum{2}. Пиво темное}
+\lipsum[3-5]
+
+\subsubsection*{\Rnum{3}. Пиво \textquote{Невское}}
+\lipsum[6-6]
+
+\subsection*{{Вывод}}
+\lipsum[7-7]
+
+\end{document}
+

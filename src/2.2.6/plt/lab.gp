@@ -30,3 +30,4 @@ fit f(x) Inputfile using 3:1 via k, b
 
 plot Inputfile using 3:1:4:2 with xyerrorbars ls -1 linecolor rgb "red" title "Измерения $\\ln{\\eta}\\left(\\frac{1}{T}\\right)$",\
      f(x) with line title "Аппроксимация по МНК"
+
