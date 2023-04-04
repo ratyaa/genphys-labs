@@ -2,6 +2,7 @@
 
 \def \srcdir{tex/}
 \def \picdir{pic/}
+\def \tbldir{tex/tables/}
 
 \input{\srcdir properties}
 \input{\srcdir macros}
@@ -255,9 +256,56 @@ $Q \rightarrow 0$, когда температура нити и стенок с
 по данным для $Q \rightarrow 0$ позволит затем определять температуру нити $t$ по значению\
 её сопротивления $R$ при произвольной мощности нагрева.
 
-\subsubsection*{\Rnum{3}. Пиво \textquote{Невское}}
-\lipsum[6-6]
+\begin{table}[h!]
+  \begin{center}
+    \input{\tbldir 23deg}
+    \caption{Измерения при $T = 23.5\ ^\circ C$}
+  \end{center}
+\end{table}		
 
+\begin{table}[h!]
+  \begin{center}
+    \input{\tbldir 35deg}
+    \caption{Измерения при $T = 35\ ^\circ C$}
+  \end{center}
+\end{table}		
+
+\begin{table}[h!]
+  \begin{center}
+    \input{\tbldir 45deg}
+    \caption{Измерения при $T = 45\ ^\circ C$}
+  \end{center}
+\end{table}		
+
+\begin{table}[h!]
+  \begin{center}
+    \input{\tbldir 55deg}
+    \caption{Измерения при $T = 55\ ^\circ C$}
+  \end{center}
+\end{table}
+
+\begin{table}[h!]
+  \begin{center}
+    \input{\tbldir 70deg}
+    \caption{Измерения при $T = 70\ ^\circ C$}
+  \end{center}
+\end{table}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includesvg[scale=1]{\picdir main.svg}
+    \caption{Нагрузочные кривые}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includesvg[scale=1]{\picdir rt.svg}
+    \caption{$R_0(t)$}
+  \end{center}
+\end{figure}
+
+\subsubsection*{\Rnum{3}. Пиво \textquote{Невское}}
 \subsection*{{Вывод}}
 
 \lipsum[7-7]
