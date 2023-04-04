@@ -104,6 +104,7 @@ Q = \frac{2 \pi L}{\ln{\sfrac{r_0}{r_1}}}\kappa \Delta T.
 \end{equation}
 
 \subsubsection*{\Rnum{2}. Описание установки и методики измерений}
+
 Схема установки приведена на \textbf{рис. \ref{fig:2}}. На оси полой цилиндрической\
 трубки с внутренним диаметром $2r_0 \approx 2$ см размещена металлическая нить диаметром\
 $2r_1 \approx 0.05$ мм и длиной $L \approx 40$ см (материал нити и точные геометрические размеры\
@@ -256,10 +257,28 @@ $Q \rightarrow 0$, когда температура нити и стенок с
 по данным для $Q \rightarrow 0$ позволит затем определять температуру нити $t$ по значению\
 её сопротивления $R$ при произвольной мощности нагрева.
 
+\subsubsection*{\Rnum{3}. Обработка результатов}
+
+Параметры установки приведены в \textbf{таб. \ref{tab:ust}}. Коэффициент установки\
+определим следующим образом:
+\begin{align*}
+  \xi = \frac{\ln{\sfrac{r_0}{r_1}}}{2 \pi L} &\approx (1.97 \pm 0.26)\ м^{-1},\\
+  \varepsilon_\xi = \sqrt{\left(\frac{\sigma_L}{L}\right)^{2} + \frac{\frac{\sigma_{2r_0}^2}{(2r_0)^2} + \frac{\sigma_{2r_1}^2}{(2r_1)^2}}{\left(\ln{\sfrac{r_0}{r_1}}\right)^{2}}} &\approx 1.4\%.
+\end{align*}
+
+\begin{table}[!h]
+  \begin{center}
+    \input{\tbldir ust.tex}
+    \caption{Параметры установки}
+    \label{tab:ust}
+  \end{center}
+\end{table}
+
 \begin{table}[h!]
   \begin{center}
     \input{\tbldir 23deg}
     \caption{Измерения при $T = 23.5\ ^\circ C$}
+    \label{tab:23deg}
   \end{center}
 \end{table}		
 
@@ -288,6 +307,7 @@ $Q \rightarrow 0$, когда температура нити и стенок с
   \begin{center}
     \input{\tbldir 70deg}
     \caption{Измерения при $T = 70\ ^\circ C$}
+    \label{tab:70deg}
   \end{center}
 \end{table}
 
@@ -295,6 +315,7 @@ $Q \rightarrow 0$, когда температура нити и стенок с
   \begin{center}
     \includesvg[scale=1]{\picdir main.svg}
     \caption{Нагрузочные кривые}
+    \label{fig:rq}
   \end{center}
 \end{figure}
 
@@ -302,14 +323,51 @@ $Q \rightarrow 0$, когда температура нити и стенок с
   \begin{center}
     \includesvg[scale=1]{\picdir rt.svg}
     \caption{$R_0(t)$}
+    \label{fig:rt}
   \end{center}
 \end{figure}
 
-\subsubsection*{\Rnum{3}. Пиво \textquote{Невское}}
+\begin{figure}[h!]
+  \begin{center}
+    \includesvg[scale=1]{\picdir kappa.svg}
+    \caption{$\kappa(t)$}
+    \label{fig:kappa}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includesvg[scale=1]{\picdir kappa_ln.svg}
+    \caption{$\kappa(t)$}
+    \label{fig:beta}
+  \end{center}
+\end{figure}
+
+\clearpage
+Результаты измерений приведены в \textbf{таб. \ref{tab:23deg}--\ref{tab:70deg}},\
+графики нагрузочных кривых на \textbf{рис. \ref{fig:rq}}, график сопротивления\
+от температуры на \textbf{рис. \ref{fig:rt}}, график $\kappa(t)$ на \textbf{рис. \ref{fig:kappa}}\
+и, наконец, график для определения степенной зависимости $\kappa \propto T^\beta$ на \textbf{рис. \ref{fig:beta}}.\
+Итоговые значения величин:
+\begin{align*}
+  R_{273} &= (18.446 \pm 0.007)\ Ом,\quad &\varepsilon_{R_{273}} \approx 0.04\%,\\
+  \frac{\mathrm{d}^{} R_0}{\mathrm{d} t^{}} &= (0.07060 \pm 0.00014)\ Ом \cdot ^\circ C^{-1},\quad &\varepsilon_{\frac{\mathrm{d}^{} R_0}{\mathrm{d} t^{}}} \approx 0.2\%,\\
+  \alpha &= (3.828 \pm 0.008) \cdot 10^{-3}\ ^\circ C^{-1},\quad  &\varepsilon_{\alpha} \approx 0.2\%,\\
+  \beta &= 0.845 \pm 0.025,\quad &\varepsilon_\beta \approx 3\%.
+\end{align*}
+Значения коэффициента теплопроводности:
+
+\begin{table}[h!]
+  \begin{center}
+    \input{\tbldir kappa.tex}
+  \end{center}
+\end{table}
+
 \subsection*{{Вывод}}
-
-\lipsum[7-7]
-
+Коэффициенты теплопроводности и температурный коэффициент сопротивления нити совпадают с\
+табличными. Степень $\beta$ в зависимости $\kappa \propto T^\beta$ не соответствует теоретически выведенному\
+$\beta_0 = \sfrac{1}{2}$, что говорит о неприменимости модели твердых шариков.
 \end{document}
+
 
 

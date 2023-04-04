@@ -66,7 +66,7 @@ plt/*.gp: $(PLT_INCLUDE_SRC) $(TABLES_TARGET)
 pic/%.svg: plt/%.gp
 	@mkdir -p $(BUILD_DIR)
 	@mkdir -p $(PIC_DIR)
-	@find -type f -name "*.fitlog" | xargs -i rm "/tmp/pivo" {}
+	@find -type f -name "*.fitlog" | xargs -i rm -f "/tmp/pivo" {}
 
 ifneq ($(PLT_SRC),)
 	@cd $(BUILD_DIR) && $(PLT) $(PLT_FLAGS) ../$^

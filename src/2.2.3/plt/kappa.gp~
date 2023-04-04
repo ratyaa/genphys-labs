@@ -1,7 +1,7 @@
-set terminal svg noenhanced linewidth 0.5
-set fit logfile datadir."rt.fitlog"
+set terminal svg noenhanced
+set fit logfile datadir."kappa.fitlog"
 
-outfile = outdir."rt.svg"
+outfile = outdir."kappa.svg"
 set output outfile
 
 set datafile separator ','
@@ -17,16 +17,20 @@ Majorgridclr = "0xD0000000"
 Minorgridclr = "0xF0000000"
 set grid lt -1 linecolor rgb Majorgridclr, lt -1 linecolor rgb Minorgridclr
 
+
 set bars 0.25
 # set title "$I(h^2),\\quad [I] = 1\\;г \\cdot м^2, \\quad [h^2] = 1\\;см^2$"
 set key right bottom
 set key width -100
 
 Shadecolor = "#80E0A080"
-Inputfile = "../data/rt.csv"
+Inputfile = "../data/kappa.csv"
+Inputtable = "../data/kappa_table.csv"
 
 f(x) = k*x + b
-fit f(x) Inputfile using 1:2 via k, b
+fit f(x) Inputtable using 1:2 via k, b smooth bezier
 
-plot Inputfile using 1:2:4:5 with xyerrorbars ls -1 linecolor rgb "red" title "Измерения $R_0(t)$",\
-     f(x) with line title "Аппроксимация по МНК"
+plot Inputfile using 1:7:4:8 with xyerrorbars ls -1 linecolor rgb "red" notitle,\
+     Inputtable using 1:2 ls -1 linecolor rgb "green" notitle,\
+     f(x) with line title "Табличные значения"
+     

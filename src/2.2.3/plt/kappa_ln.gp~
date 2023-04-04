@@ -1,7 +1,7 @@
 set terminal svg noenhanced linewidth 0.5
-set fit logfile datadir."rt.fitlog"
+set fit logfile datadir."kappa_ln.fitlog"
 
-outfile = outdir."rt.svg"
+outfile = outdir."kappa_ln.svg"
 set output outfile
 
 set datafile separator ','
@@ -23,10 +23,10 @@ set key right bottom
 set key width -100
 
 Shadecolor = "#80E0A080"
-Inputfile = "../data/rt.csv"
+Inputfile = "../data/kappa_ln.csv"
 
 f(x) = k*x + b
 fit f(x) Inputfile using 1:2 via k, b
 
-plot Inputfile using 1:2:4:5 with xyerrorbars ls -1 linecolor rgb "red" title "Измерения $R_0(t)$",\
+plot Inputfile using 1:2:4:5 with xyerrorbars ls -1 linecolor rgb "red" notitle,\
      f(x) with line title "Аппроксимация по МНК"

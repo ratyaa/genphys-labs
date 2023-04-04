@@ -1,4 +1,4 @@
-set terminal svg noenhanced
+set terminal svg noenhanced linewidth 0.5
 set fit logfile datadir."main.fitlog"
 
 outfile = outdir."main.svg"
@@ -16,7 +16,6 @@ set ylabel "$R_{н},\\ Ом$"
 Majorgridclr = "0xD0000000"
 Minorgridclr = "0xF0000000"
 set grid lt -1 linecolor rgb Majorgridclr, lt -1 linecolor rgb Minorgridclr
-
 
 set bars 0.25
 # set title "$I(h^2),\\quad [I] = 1\\;г \\cdot м^2, \\quad [h^2] = 1\\;см^2$"

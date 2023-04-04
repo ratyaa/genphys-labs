@@ -1,15 +1,15 @@
 set terminal svg noenhanced linewidth 0.5
-set fit logfile datadir."rt.fitlog"
+set fit logfile datadir."kappa_ln.fitlog"
 
-outfile = outdir."rt.svg"
+outfile = outdir."kappa_ln.svg"
 set output outfile
 
 set datafile separator ','
 set grid xtics ytics mxtics mytics
 set mytics 10
 set mxtics 10
-set xlabel "$t,\\ ^\\circ C$"
-set ylabel "$R_{0},\\ Ом$"
+set xlabel "$\\ln{T}$"
+set ylabel "$\\ln{\\kappa}$"
 # set xrange [0:400]
 # set yrange [0:0.22]
 
@@ -23,10 +23,10 @@ set key right bottom
 set key width -100
 
 Shadecolor = "#80E0A080"
-Inputfile = "../data/rt.csv"
+Inputfile = "../data/kappa.csv"
 
 f(x) = k*x + b
-fit f(x) Inputfile using 1:2 via k, b
+fit f(x) Inputfile using 9:10 via k, b
 
-plot Inputfile using 1:2:4:5 with xyerrorbars ls -1 linecolor rgb "red" title "Измерения $R_0(t)$",\
+plot Inputfile using 9:10:11:12 with xyerrorbars ls -1 linecolor rgb "red" title "Измерения $\\ln{\\kappa}\\left(\\ln{T}\\right)$",\
      f(x) with line title "Аппроксимация по МНК"
